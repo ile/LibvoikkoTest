@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.puimula.voikko</groupId>
+  <artifactId>libvoikko</artifactId>
+  <version>4.3.2</version>
+  <packaging>jar</packaging>
+  <name>libvoikko</name>
+  <description>Java API for libvoikko, library of free natural language processing tools</description>
+  <url>https://voikko.puimula.org</url>
+
+  <licenses>
+    <license>
+      <name>Mozilla Public License Version 1.1</name>
+      <url>https://www.mozilla.org/MPL/1.1/</url>
+      <distribution>repo</distribution>
+    </license>
+    <license>
+      <name>GNU General Public License Version 2</name>
+      <url>https://www.gnu.org/licenses/gpl-2.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+    <license>
+      <name>GNU Lesser General Public License Version 2.1</name>
+      <url>https://www.gnu.org/licenses/lgpl-2.1.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Harri Pitkänen</name>
+      <email>hatapitk@iki.fi</email>
+      <roles>
+        <role>maintainer</role>
+        <role>core library developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <organization>
+    <name>Voikko developers</name>
+    <url>https://voikko.puimula.org</url>
+  </organization>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.java.dev.jna</groupId>
+      <artifactId>jna</artifactId>
+      <version>5.13.0</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.9.2</version>
+      <type>jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.9.2</version>
+      <type>jar</type>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <release>8</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.5.0</version>
+        <configuration>
+          <sourceFileExcludes>
+            <sourceFileExclude>org/puimula/libvoikko/ByteArray.java</sourceFileExclude>
+            <sourceFileExclude>org/puimula/libvoikko/SizeT.java</sourceFileExclude>
+            <sourceFileExclude>org/puimula/libvoikko/SizeTByReference.java</sourceFileExclude>
+          </sourceFileExcludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <scm>
+    <url>git@github.com:voikko/corevoikko.git</url>
+    <connection>scm:git:git@github.com:voikko/corevoikko.git</connection>
+    <developerConnection>scm:git:git@github.com:voikko/corevoikko.git</developerConnection>
+  </scm>
+</project>
